@@ -6,10 +6,26 @@
     <title>MedicineTransparency.eu</title>
     <meta name="description" content="EU advocacy initiative for species-origin disclosure of animal-derived excipients in medicines." />
 
+    <link rel="canonical" href="https://medicinetransparency.eu/" />
+    <meta name="robots" content="index,follow" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="MedicineTransparency.eu" />
+    <meta property="og:title" content="MedicineTransparency.eu" />
+    <meta property="og:description" content="EU advocacy initiative for species-origin disclosure of animal-derived excipients in medicines." />
+    <meta property="og:url" content="https://medicinetransparency.eu/" />
+
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="MedicineTransparency.eu" />
+    <meta name="twitter:description" content="EU advocacy initiative for species-origin disclosure of animal-derived excipients in medicines." />
+
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%2064%2064%27%3E%3Cdefs%3E%3ClinearGradient%20id%3D%27g%27%20x1%3D%270%27%20y1%3D%270%27%20x2%3D%271%27%20y2%3D%271%27%3E%3Cstop%20offset%3D%270%27%20stop-color%3D%27%232B6CB0%27/%3E%3Cstop%20offset%3D%271%27%20stop-color%3D%27%23235A93%27/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect%20x%3D%278%27%20y%3D%2720%27%20width%3D%2748%27%20height%3D%2724%27%20rx%3D%2712%27%20fill%3D%27url(%23g)%27/%3E%3Cpath%20d%3D%27M28%2022%20l8%2020%27%20stroke%3D%27%23FFFFFF%27%20stroke-width%3D%275%27%20stroke-linecap%3D%27round%27/%3E%3Ccircle%20cx%3D%2724%27%20cy%3D%2732%27%20r%3D%272.6%27%20fill%3D%27%23FFFFFF%27%20fill-opacity%3D%270.55%27/%3E%3Ccircle%20cx%3D%2740%27%20cy%3D%2732%27%20r%3D%272.6%27%20fill%3D%27%23FFFFFF%27%20fill-opacity%3D%270.55%27/%3E%3C/svg%3E" />
 
+    <link rel="preconnect" href="https://cdn.tailwindcss.com" crossorigin />
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
+        /** @type {any} */
+        const tailwind = window.tailwind || {};
         tailwind.config = {
             theme: {
                 extend: {
@@ -20,18 +36,28 @@
                     }
                 }
             }
-        }
+        };
     </script>
 
     <style>
-        html{ scroll-behavior:smooth; scroll-padding-top:96px; }
+        :root{
+            --paper:#FBF7F1;
+            --nav-h:96px;
+        }
+
+        html{
+            scroll-behavior:smooth;
+            scroll-padding-top:var(--nav-h);
+        }
+
+        section[id]{ scroll-margin-top:var(--nav-h); }
 
         body{
             background:
                     radial-gradient(900px 600px at 18% 10%, rgba(245,158,11,0.10), transparent 60%),
                     radial-gradient(900px 600px at 85% 20%, rgba(43,108,176,0.12), transparent 62%),
                     radial-gradient(900px 700px at 55% 90%, rgba(16,185,129,0.06), transparent 65%),
-                    var(--paper, #FBF7F1);
+                    var(--paper);
         }
 
         .btn-ease{
@@ -199,10 +225,19 @@
             }
         }
     </style>
+
+    <script type="application/ld+json">
+        {
+            "@context":"https://schema.org",
+            "@type":"WebSite",
+            "name":"MedicineTransparency.eu",
+            "url":"https://medicinetransparency.eu/"
+        }
+    </script>
 </head>
 
 <body class="text-stone-900">
-<header class="sticky top-0 z-50 border-b border-stone-200/70 bg-paper/80 backdrop-blur">
+<header id="siteHeader" class="sticky top-0 z-50 border-b border-stone-200/70 bg-paper/80 backdrop-blur">
     <div class="mx-auto max-w-6xl px-5 sm:px-6">
         <div class="flex items-center justify-between py-4">
             <a href="#overview" class="flex items-center gap-3">
@@ -223,7 +258,7 @@
                 <span class="text-lg font-semibold tracking-tight sm:text-xl">MedicineTransparency.eu</span>
             </a>
 
-            <nav class="hidden items-center gap-8 lg:flex">
+            <nav class="hidden items-center gap-8 lg:flex" aria-label="Primary">
                 <a href="#overview" class="navlink text-stone-700 hover:text-stone-900 btn-ease">Overview</a>
                 <a href="#problem" class="navlink text-stone-700 hover:text-stone-900 btn-ease">Why?</a>
                 <a href="#solution" class="navlink text-stone-700 hover:text-stone-900 btn-ease">Solution</a>
@@ -247,7 +282,7 @@
 
                 <button id="mobileBtn" type="button"
                         class="inline-flex lg:hidden items-center justify-center rounded-2xl border border-stone-300 bg-paper/70 p-2.5 text-stone-800 shadow-sm hover:bg-paper/90 btn-ease"
-                        aria-label="Open menu" aria-expanded="false">
+                        aria-label="Open menu" aria-expanded="false" aria-controls="mobilePanel">
                     <svg viewBox="0 0 24 24" class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
                         <path d="M4 7h16"></path>
                         <path d="M4 12h16"></path>
@@ -259,7 +294,7 @@
 
         <div id="mobilePanel" class="mobile-panel lg:hidden" data-open="false">
             <div class="pb-4">
-                <div class="grid gap-2 rounded-3xl border border-stone-200 bg-paper/75 p-4 shadow-sm">
+                <div class="grid gap-2 rounded-3xl border border-stone-200 bg-paper/75 p-4 shadow-sm" aria-label="Mobile">
                     <a href="#overview" class="rounded-2xl px-3 py-2 text-stone-800 hover:bg-paper/90 btn-ease">Overview</a>
                     <a href="#problem" class="rounded-2xl px-3 py-2 text-stone-800 hover:bg-paper/90 btn-ease">Why?</a>
                     <a href="#solution" class="rounded-2xl px-3 py-2 text-stone-800 hover:bg-paper/90 btn-ease">Solution</a>
@@ -292,9 +327,10 @@
                 <span class="inline-flex h-2 w-2 rounded-full bg-red-500"></span>
                 <span>EU advocacy initiative</span>
             </div>
+
             <br><p> </p>
-            <h1 class="mt-5 font-extrabold tracking-tight text-stone-900"
-                style="font-size:clamp(2.05rem, 5vw, 4.1rem); line-height:1.03;">
+
+            <h1 class="mt-5 font-extrabold tracking-tight text-stone-900" style="font-size:clamp(2.05rem, 5vw, 4.1rem); line-height:1.03;">
                 Disclose animal-derived<br class="hidden sm:block" />
                 ingredients in <span class="text-brand-700">EU medicines</span>
             </h1>
@@ -407,8 +443,7 @@
                         </div>
                     </div>
 
-                    <p class="mt-4 text-base leading-relaxed text-stone-700 sm:text-lg">
-                    </p>
+                    <p class="mt-4 text-base leading-relaxed text-stone-700 sm:text-lg"></p>
                 </div>
             </div>
         </div>
@@ -430,7 +465,7 @@
                             </span>
                             <div>
                                 <div class="t">The EU can mandate labelling to show clearly when animal-derived products are used in medicines.</div>
-                                <div class="d">Manufacturers already track excipient origin in the supply chain, so disclosure is mainly a labelling change, not a formulation change. Disclosure reduces uncertainty for patients and healthcare professionals without changing formulations, with minimal cost and no impact on medicine availability.</div>
+                                <div class="d">Manufacturers already track excipient origin in the supply chain, so disclosure is mainly a labelling, not a formulation change. Disclosure reduces uncertainty for patients and healthcare professionals without changing formulations, with minimal cost and no impact on medicine availability.</div>
                             </div>
                         </div>
                     </div>
@@ -614,13 +649,16 @@
                     <input type="hidden" name="_subject" value="MedicineTransparency.eu contact form submission" />
 
                     <div class="grid gap-3">
-                        <input class="w-full rounded-2xl border border-stone-300 bg-paper/60 px-4 py-3 text-stone-900 shadow-sm focus:outline-none focus:ring-4 focus:ring-stone-200"
+                        <label for="c_name" class="sr-only">Name</label>
+                        <input id="c_name" class="w-full rounded-2xl border border-stone-300 bg-paper/60 px-4 py-3 text-stone-900 shadow-sm focus:outline-none focus:ring-4 focus:ring-stone-200"
                                type="text" name="name" placeholder="Name" autocomplete="name" />
 
-                        <input class="w-full rounded-2xl border border-stone-300 bg-paper/60 px-4 py-3 text-stone-900 shadow-sm focus:outline-none focus:ring-4 focus:ring-stone-200"
+                        <label for="c_email" class="sr-only">Email</label>
+                        <input id="c_email" class="w-full rounded-2xl border border-stone-300 bg-paper/60 px-4 py-3 text-stone-900 shadow-sm focus:outline-none focus:ring-4 focus:ring-stone-200"
                                type="email" name="email" placeholder="Email" autocomplete="email" required />
 
-                        <textarea class="min-h-[130px] w-full rounded-2xl border border-stone-300 bg-paper/60 px-4 py-3 text-stone-900 shadow-sm focus:outline-none focus:ring-4 focus:ring-stone-200"
+                        <label for="c_msg" class="sr-only">Message</label>
+                        <textarea id="c_msg" class="min-h-[130px] w-full rounded-2xl border border-stone-300 bg-paper/60 px-4 py-3 text-stone-900 shadow-sm focus:outline-none focus:ring-4 focus:ring-stone-200"
                                   name="message" placeholder="Message" required></textarea>
 
                         <button id="contactBtn" type="submit"
@@ -661,6 +699,20 @@
         </div>
     </div>
 </footer>
+
+<script>
+    (function () {
+        const header = document.getElementById("siteHeader");
+        function setNavHeight() {
+            if (!header) return;
+            const h = Math.ceil(header.getBoundingClientRect().height);
+            document.documentElement.style.setProperty("--nav-h", (h + 12) + "px");
+        }
+        window.addEventListener("load", setNavHeight);
+        window.addEventListener("resize", setNavHeight);
+        setNavHeight();
+    })();
+</script>
 
 <script>
     (function () {
