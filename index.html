@@ -6,7 +6,7 @@
     <title>MedicineTransparency.eu</title>
     <meta name="description" content="EU advocacy initiative for species-origin disclosure of animal-derived excipients in medicines." />
     <meta name="robots" content="index,follow,max-image-preview:large" />
-    <meta name="theme-color" content="#F0E3D3" />
+    <meta name="theme-color" content="#FAF1E6" />
 
     <link rel="canonical" href="https://www.medicinetransparency.eu/" />
 
@@ -41,7 +41,7 @@
                     colors: {
                         brand: { 600: "#2B6CB0", 700: "#235A93" },
                         accent: { 600: "#F59E0B", 700: "#D97706" },
-                        paper: "#F0E3D3"
+                        paper: "#FAF1E6"
                     }
                 }
             }
@@ -50,8 +50,8 @@
 
     <style>
         :root{
-            --paper:#F0E3D3;
-            --paperHeader:#EEDFCF;
+            --paper:#FAF1E6;
+            --paperHeader:#F6EBDD;
             --nav-h:96px;
         }
 
@@ -61,9 +61,9 @@
 
         body{
             background:
-                    radial-gradient(1100px 700px at 18% 10%, rgba(245,158,11,0.12), transparent 62%),
-                    radial-gradient(1000px 700px at 78% 22%, rgba(251,191,36,0.10), transparent 64%),
-                    radial-gradient(1000px 800px at 55% 92%, rgba(244,63,94,0.045), transparent 68%),
+                    radial-gradient(1400px 860px at 18% 10%, rgba(245,158,11,0.075), transparent 66%),
+                    radial-gradient(1300px 860px at 78% 22%, rgba(251,191,36,0.06), transparent 68%),
+                    radial-gradient(1300px 960px at 55% 92%, rgba(244,63,94,0.028), transparent 72%),
                     var(--paper);
         }
 
@@ -91,7 +91,6 @@
         .mobile-panel{ max-height:0; overflow:hidden; transition:max-height 220ms ease; }
         .mobile-panel[data-open="true"]{ max-height:520px; }
 
-        /* header nav feedback */
         .navlink{
             display:inline-block;
             padding:10px 12px;
@@ -101,7 +100,6 @@
         .navlink:hover{
             color: rgb(237, 209, 94);
             box-shadow:0 10px 22px rgba(0,0,0,0.08);
-
         }
         .navlink:active{
             background:rgba(120,113,108,0.24);
@@ -180,7 +178,6 @@
             border:0;
         }
 
-        /* contact form placeholder + autofill */
         input::placeholder, textarea::placeholder{
             color:rgba(120,113,108,0.75);
         }
@@ -188,11 +185,10 @@
         textarea:-webkit-autofill{
             -webkit-text-fill-color:rgb(87,83,78);
             transition:background-color 9999s ease-in-out 0s;
-            box-shadow:0 0 0px 1000px rgba(240,227,211,0.70) inset;
+            box-shadow:0 0 0px 1000px rgba(255, 254, 244, 0.7) inset;
             caret-color:rgb(41,37,36);
         }
 
-        /* hamburger feedback */
         .menu-btn{
             -webkit-tap-highlight-color:rgba(0,0,0,0);
             touch-action:manipulation;
@@ -200,18 +196,19 @@
             cursor:pointer;
             outline:none;
             pointer-events:auto;
-            background:rgba(240,227,211,1);
+            background:rgba(246,235,221,0.92);
             border:1px solid rgba(120,113,108,0.62);
+            transform:translateY(0px);
         }
         .menu-btn:hover{
-            background:rgba(228,214,197,1);
+            background:rgba(236,222,205,0.96);
             border-color:rgba(120,113,108,0.96);
             box-shadow:0 14px 34px rgba(0,0,0,0.14);
             transform:translateY(-1px);
             filter:saturate(1.06);
         }
         .menu-btn:active{
-            background:rgba(216,199,180,1);
+            background:rgba(226,209,190,0.98);
             border-color:rgba(120,113,108,0.99);
             box-shadow:0 8px 20px rgba(0,0,0,0.14);
             transform:translateY(0px) scale(0.97);
@@ -221,13 +218,13 @@
             box-shadow:0 0 0 5px rgba(120,113,108,0.24);
         }
         .menu-btn.is-open{
-            background:rgba(216,199,180,1);
+            background:rgba(226,209,190,0.98);
             border-color:rgba(120,113,108,0.99);
             box-shadow:0 16px 38px rgba(0,0,0,0.14);
             filter:saturate(1.08);
         }
         .menu-btn.is-tap{
-            background:rgba(216,199,180,1);
+            background:rgba(226,209,190,0.98);
             border-color:rgba(120,113,108,0.99);
             box-shadow:0 10px 24px rgba(0,0,0,0.14);
             transform:translateY(0px) scale(0.975);
@@ -244,7 +241,7 @@
             padding:10px 12px;
             border-radius:14px;
             border:1px solid rgba(120,113,108,0.25);
-            background:rgba(240,227,211,0.985);
+            background:rgba(246,235,221,0.985);
             color:rgb(41,37,36);
             box-shadow:0 10px 25px rgba(0,0,0,0.08);
             opacity:0;
@@ -323,13 +320,19 @@
             font-size:1.04rem;
             line-height:1.65rem;
         }
+
+        .mnav-tap{
+            background:rgba(120,113,108,0.14);
+            box-shadow:0 10px 22px rgba(0,0,0,0.08);
+            transform:translateY(0px) scale(0.99);
+        }
     </style>
 </head>
 
 <body class="text-stone-800">
 <div id="top"></div>
 
-<header id="siteHeader" class="sticky top-0 z-50 border-b border-stone-200/80" style="background:var(--paperHeader);">
+<header id="siteHeader" class="sticky top-0 z-50 border-b border-stone-200/80 backdrop-blur-md" style="background:rgba(246,235,221,0.76);">
     <div class="mx-auto max-w-6xl px-5 sm:px-6">
         <div class="flex items-center justify-between py-4">
             <a href="#overview" class="flex items-center gap-3">
@@ -391,13 +394,13 @@
         <div id="mobilePanel" class="mobile-panel lg:hidden" data-open="false">
             <div class="pb-4">
                 <div class="grid gap-2 rounded-3xl border border-stone-200 bg-paper p-4 shadow-sm" aria-label="Mobile navigation">
-                    <a href="#overview" class="rounded-2xl px-3 py-2 text-stone-800 hover:bg-paper btn-ease">Overview</a>
-                    <a href="#problem" class="rounded-2xl px-3 py-2 text-stone-800 hover:bg-paper btn-ease">Why?</a>
-                    <a href="#solution" class="rounded-2xl px-3 py-2 text-stone-800 hover:bg-paper btn-ease">Solution</a>
-                    <a href="#commission" class="rounded-2xl px-3 py-2 text-stone-800 hover:bg-paper btn-ease">EC Response</a>
-                    <a href="#evidence" class="rounded-2xl px-3 py-2 text-stone-800 hover:bg-paper btn-ease">Evidence</a>
-                    <a href="#faq" class="rounded-2xl px-3 py-2 text-stone-800 hover:bg-paper btn-ease">FAQ</a>
-                    <a href="#contact" class="rounded-2xl px-3 py-2 text-stone-800 hover:bg-paper btn-ease">Contact</a>
+                    <a href="#overview" class="mnav-link rounded-2xl px-3 py-2 text-stone-800 hover:bg-paper btn-ease">Overview</a>
+                    <a href="#problem" class="mnav-link rounded-2xl px-3 py-2 text-stone-800 hover:bg-paper btn-ease">Why?</a>
+                    <a href="#solution" class="mnav-link rounded-2xl px-3 py-2 text-stone-800 hover:bg-paper btn-ease">Solution</a>
+                    <a href="#commission" class="mnav-link rounded-2xl px-3 py-2 text-stone-800 hover:bg-paper btn-ease">EC Response</a>
+                    <a href="#evidence" class="mnav-link rounded-2xl px-3 py-2 text-stone-800 hover:bg-paper btn-ease">Evidence</a>
+                    <a href="#faq" class="mnav-link rounded-2xl px-3 py-2 text-stone-800 hover:bg-paper btn-ease">FAQ</a>
+                    <a href="#contact" class="mnav-link rounded-2xl px-3 py-2 text-stone-800 hover:bg-paper btn-ease">Contact</a>
 
                     <a href="v1.5%20Transparency%20on%20Animal-Derived%20Excipients%20in%20Human%20Medicines%20+%20Sources.pdf"
                        target="_blank" rel="noopener"
@@ -841,13 +844,14 @@
         function tapFlash() {
             btn.classList.add("is-tap");
             window.clearTimeout(btn.__tapT);
-            btn.__tapT = window.setTimeout(() => btn.classList.remove("is-tap"), 160);
+            btn.__tapT = window.setTimeout(() => btn.classList.remove("is-tap"), 180);
         }
 
         btn.addEventListener("pointerdown", tapFlash, { passive: true });
         btn.addEventListener("touchstart", tapFlash, { passive: true });
 
         btn.addEventListener("click", () => {
+            tapFlash();
             const open = panel.dataset.open === "true";
             setOpen(!open);
         });
@@ -860,13 +864,17 @@
                 if (!target) return;
 
                 e.preventDefault();
+
+                a.classList.add("mnav-tap");
+                window.setTimeout(() => a.classList.remove("mnav-tap"), 160);
+
                 setOpen(false);
 
-                setTimeout(() => {
+                window.setTimeout(() => {
                     if (window.__setNavHeight) window.__setNavHeight();
                     target.scrollIntoView({ behavior: "smooth", block: "start" });
                     history.replaceState(null, "", "#" + id);
-                }, 230);
+                }, 220);
             });
         });
     })();
